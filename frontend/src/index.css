@@ -1,0 +1,187 @@
+/* ============================================================
+   BookNest — Design tokens
+   Palette: "library at dusk" — deep forest ink, brass gold,
+   warm paper, quiet burgundy for accents. No default cream+
+   terracotta, no dark+neon, no SaaS card kit.
+   Type: Fraunces (display serif, does the talking) + Manrope
+   (sans, quiet workhorse for body/UI).
+   ============================================================ */
+
+:root {
+  --ink: #16261f;
+  --ink-soft: #23362c;
+  --paper: #f2eee1;
+  --paper-dim: #e8e2d0;
+  --brass: #b8863f;
+  --brass-soft: #d9b579;
+  --burgundy: #7a2331;
+  --burgundy-soft: #9c3b49;
+  --line: rgba(22, 38, 31, 0.14);
+  --line-on-dark: rgba(242, 238, 225, 0.18);
+  --text: #1c2620;
+  --text-muted: #55645a;
+  --text-on-dark: #f2eee1;
+  --text-on-dark-muted: #b9c2ba;
+
+  --font-display: "Fraunces", "Iowan Old Style", ui-serif, Georgia, serif;
+  --font-body: "Manrope", ui-sans-serif, system-ui, -apple-system, sans-serif;
+
+  --radius-sm: 3px;
+  --radius-md: 6px;
+  --shadow-card: 0 1px 0 rgba(22, 38, 31, 0.06);
+  --shadow-lift: 4px 4px 0 var(--ink);
+
+  --maxw: 1180px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  color: var(--text);
+  margin: 0;
+  line-height: 1.12;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+p {
+  margin: 0;
+}
+
+a {
+  color: inherit;
+}
+
+button {
+  font-family: var(--font-body);
+  cursor: pointer;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.wrap {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 0 28px;
+}
+
+/* Focus visibility */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible {
+  outline: 2px solid var(--burgundy);
+  outline-offset: 2px;
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ---------- Buttons ---------- */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border: none;
+  border-radius: var(--radius-sm);
+  padding: 13px 24px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  white-space: nowrap;
+}
+
+.btn:active {
+  transform: translate(2px, 2px);
+}
+
+.btn-primary {
+  background: var(--burgundy);
+  color: var(--paper);
+  box-shadow: var(--shadow-lift);
+}
+
+.btn-primary:hover {
+  background: var(--burgundy-soft);
+}
+
+.btn-primary:active {
+  box-shadow: 2px 2px 0 var(--ink);
+}
+
+.btn-ghost {
+  background: transparent;
+  color: var(--text);
+  border: 1.5px solid var(--ink);
+}
+
+.btn-ghost:hover {
+  background: var(--ink);
+  color: var(--paper);
+}
+
+.btn-on-dark {
+  background: var(--brass);
+  color: var(--ink);
+  box-shadow: 4px 4px 0 rgba(242, 238, 225, 0.35);
+}
+
+.btn-on-dark:hover {
+  background: var(--brass-soft);
+}
+
+/* Pill filter buttons — responsive, wraps naturally, horizontal-scroll on mobile */
+
+.pill {
+  display: inline-flex;
+  align-items: center;
+  border: 1.5px solid var(--line);
+  background: var(--paper);
+  color: var(--text-muted);
+  border-radius: 999px;
+  padding: 9px 18px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  transition: all 0.15s ease;
+  flex: 0 0 auto;
+}
+
+.pill:hover {
+  border-color: var(--ink);
+  color: var(--text);
+}
+
+.pill.active {
+  background: var(--ink);
+  border-color: var(--ink);
+  color: var(--paper);
+}

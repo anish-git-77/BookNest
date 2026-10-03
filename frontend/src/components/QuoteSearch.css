@@ -1,0 +1,191 @@
+.qsearch {
+  background: var(--paper-dim);
+  border-bottom: 1px solid var(--line);
+  padding: 90px 0;
+}
+
+.qsearch-inner {
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  gap: 56px;
+  align-items: start;
+}
+
+.qsearch-eyebrow {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--burgundy);
+  margin-bottom: 14px;
+}
+
+.qsearch-intro h2 {
+  font-size: clamp(1.7rem, 3vw, 2.2rem);
+}
+
+.qsearch-sub {
+  margin-top: 16px;
+  color: var(--text-muted);
+  max-width: 380px;
+}
+
+/* Index card */
+.qcard {
+  background: var(--paper);
+  border: 1.5px solid var(--ink);
+  border-radius: var(--radius-md);
+  padding: 30px 30px 26px;
+  box-shadow: 6px 6px 0 var(--brass-soft);
+}
+
+.qcard-label {
+  display: block;
+  font-weight: 700;
+  font-size: 0.85rem;
+  margin-bottom: 10px;
+  color: var(--text);
+}
+
+.qcard-input {
+  width: 100%;
+  border: 1.5px solid var(--line);
+  border-radius: var(--radius-sm);
+  padding: 14px 16px;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  resize: vertical;
+  background: var(--paper);
+  color: var(--text);
+}
+
+.qcard-input:focus {
+  outline: none;
+  border-color: var(--ink);
+}
+
+.qcard-examples {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 14px;
+}
+
+.qcard-example-chip {
+  background: none;
+  border: 1px dashed var(--line);
+  border-radius: 999px;
+  padding: 6px 12px;
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  transition: border-color 0.15s ease, color 0.15s ease;
+}
+
+.qcard-example-chip:hover {
+  border-color: var(--burgundy);
+  color: var(--burgundy);
+}
+
+.qcard-submit {
+  margin-top: 20px;
+  width: 100%;
+}
+
+.qcard-submit:disabled {
+  opacity: 0.6;
+  cursor: progress;
+}
+
+.qsearch-error {
+  grid-column: 2;
+  margin-top: 18px;
+  padding: 14px 16px;
+  border-left: 3px solid var(--burgundy);
+  background: var(--paper);
+  font-size: 0.92rem;
+}
+
+/* Result card */
+.qresult {
+  grid-column: 2;
+  margin-top: 22px;
+  background: var(--paper);
+  border-left: 4px solid var(--brass);
+  padding: 26px 28px;
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+}
+
+.qresult-tag {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--burgundy);
+  text-transform: lowercase;
+  margin-bottom: 10px;
+}
+
+.qresult-tag-muted {
+  color: var(--text-muted);
+}
+
+.qresult-title {
+  font-size: 1.5rem;
+}
+
+.qresult-author {
+  margin-top: 4px;
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+.qresult-summary {
+  margin-top: 14px;
+  max-width: 60ch;
+}
+
+.qresult-availability {
+  margin-top: 20px;
+}
+
+.qresult-availability-label {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--text-muted);
+}
+
+.qresult-availability-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.qresult-chip {
+  background: var(--paper-dim);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 6px 14px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.qresult-note {
+  margin-top: 16px;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.qresult-view-btn {
+  margin-top: 20px;
+}
+
+@media (max-width: 860px) {
+  .qsearch-inner {
+    grid-template-columns: 1fr;
+  }
+  .qsearch-error,
+  .qresult {
+    grid-column: 1;
+  }
+  .qsearch-sub {
+    max-width: none;
+  }
+}
